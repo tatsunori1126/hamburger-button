@@ -1,0 +1,44 @@
+@charset "UTF-8";
+// 閉じるボタンのみ（ハンバーガーボタンの切り替わりなし）
+
+.close-btn {
+    /* ボタンの配置位置  */
+    position: fixed;
+    top: 170px;
+    right: 16px;
+    /* ボタンの大きさ  */
+    width: 48px;
+    height: 48px;
+    /* 最前面に */
+    z-index: 10;
+}
+/***** 真ん中のバーガー線 *****/
+.close-btn-line {
+	display: block;
+	position: relative;  /* バーガー線の位置基準として設定 */
+	width: 100%;  /* 線の長さと高さ */
+	height: 4px;
+	background-color: #000000;  /* バーガー線の色 */
+	transition: .2s;
+    background-color: transparent;  	/* 真ん中の線を透明に */
+}
+.close-btn-line::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    transition: .5s;
+    transform: rotate(45deg);
+}
+.close-btn-line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    transition: .5s;
+    transform: rotate(-45deg);
+  }
